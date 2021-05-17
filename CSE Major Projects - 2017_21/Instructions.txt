@@ -1,1 +1,8 @@
+Dear Students,
 
+All of you create a folder with the name of your Project and upload 
+ - Project documentation
+ - Data sets used
+ - Code
+ - a small video of your project's execution along with audio.
+ 
