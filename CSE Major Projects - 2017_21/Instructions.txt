@@ -1,8 +1,9 @@
 Dear Students,
 
-All of you create a folder with the name of your Project and upload 
+All of you create a folder with the name of your Project and upload in Github
  - Project documentation
- - Data sets used
+ - Data sets used (links from where datasets are picked)
  - Code
- - a small video of your project's execution along with audio.
+ - PPTs(of all the reviews)
+ - a small video of your project's execution along with audio. This video should include the project aim, installations to be done, packages and a brief of different modules in your code and executions/output.
  
