@@ -6,4 +6,4 @@ All of you create a folder with the name of your Project and upload in Github
  - Code
  - PPTs(of all the reviews)
  - a small video of your project's execution along with audio. This video should include the project aim, installations to be done, packages and a brief of different modules in your code and executions/output.
- 
+ # Note: Do not keep duplicate projects.
