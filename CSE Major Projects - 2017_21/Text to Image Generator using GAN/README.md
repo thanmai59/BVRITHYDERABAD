@@ -1,0 +1,1 @@
+Aim of the project Text to Image Generator using GAN (Generative adversarial Networks) is to develop a model which takes the text data specifying the features of an image and generates Target image based on the text description.
