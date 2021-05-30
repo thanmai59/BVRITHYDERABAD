@@ -7,18 +7,30 @@ We aimed at identifying the right number of customer segments, providing the num
 
 <h2>Requirements</h2>
 <h3>Hardware</h3>
-128GB SSD<br>
-8GB RAM<br>
-Intel I5 Core Processor
+
+- 128GB SSD<br>
+- 8GB RAM<br>
+- Intel I5 Core Processor
 
 <h3>Software</h3>
-RStudio <br>
-R (v4.0+) <br>
+
+- RStudio <br>
+- R (v4.0+) <br>
 
 <h2>Install packages</h2>
+
 - dplyr<br>
-- DataExplorer
+- DataExplorer<br>
+- ggplot2<br>
+- cluster<br>
+- factoextra<br>
+- tidyverse<br>
+
 <h2>Usage</h2>
 
+- Set the working directory
+- You can either import the dataset from csv to RStudio or make sure that the dataset is in the current working directory.
+- Update packages(optional) and load the required libraries.
+- Run the code given in RStudio.
 
 <b>[Click here](https://mohanameher.github.io/High-value-customers-identification-for-an-Ecommerce-Company/preview.html)</b> to view the preview of the implementation.
