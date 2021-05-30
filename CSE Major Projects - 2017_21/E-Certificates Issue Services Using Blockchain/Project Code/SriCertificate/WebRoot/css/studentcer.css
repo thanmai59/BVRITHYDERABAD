@@ -1,0 +1,215 @@
+@import url('https://fonts.googleapis.com/css?family=Popins:200,300,400,500,600,700,800,900&display=swap');
+*{
+	margin: 0;
+	padding: 0;
+	box-sizing:border-box;
+	font-family:'Poppins', sans-sarif;
+}
+@media (max-width: 2000px)
+.header {
+    flex-wrap: nowrap;
+}
+.col1{
+  background-color: lightblue;
+}
+.col1 #header{
+  margin-left: 35px;
+}
+.col1 #project{
+	font-size:20px;
+}
+a{outline:none; text-decoration:none;}
+
+.clear{clear:both;}
+br.clear{clear:both; margin-top:-15px;}
+body {
+    position: relative;
+    background-color:white;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4em;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+    
+}
+
+.textbox{
+	margin-left: 20px;
+	border: 2px solid black;
+	outline:none;
+	padding:10px;
+	border-radius:25px;
+	}
+	
+
+	.button{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    border-bottom-width: 4px;
+    font-size: 20px;
+    margin-left:20px;
+}
+
+.button1{
+    width: 100px;
+    height: 35px;
+    border-radius: 10px;
+    transform-style: preserve-3d;
+    border-bottom-width: 4px;
+    font-size: 20px;
+    margin-left:20px;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.col3{
+	width:1426px;
+	display:flex;
+	justify-content: center;
+	align-items:center;
+	flex-wrap: wrap;
+}
+
+
+
+@media screen and (max-width: 1060px ) {
+    .col1 { width:100%;}
+    .col3 { width:100%;}
+    .col2{ width:100%; }
+
+}
+@media screen and (max-width: 768px) {
+    .col1 { width:100%;}
+    .col2,.col3 { width:100%; margin:0; border:none; }
+}
+
+@media (max-width: 880px){
+.header {
+    flex-wrap: nowrap;
+}}
+.col1{
+  background-color: lightblue;
+}
+.col1 #header{
+  margin-left: 35px;
+}
+a{outline:none; text-decoration:none;}
+
+.clear{clear:both;}
+br.clear{clear:both; margin-top:-15px;}
+body {
+    position: relative;
+    background-color:white;
+    font-size: 14px;
+    font-weight: 400;
+    font-style: normal;
+    line-height: 1.4em;
+    word-wrap: break-word;
+    margin: 0;
+    padding: 0;
+}
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+}
+
+li a, .dropbtn {
+  display: inline-block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+}
+
+
+li.dropdown {
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 1;
+}
+
+.dropdown-content a {
+  color: black;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+.dropdown-content a:hover {background-color: #f1f1f1;}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.abstract{
+    border: 1px solid white;
+    height: 380px;
+    width: 1330px;
+    border-radius: 30px;
+    background-color: grey;
+}
+.abstract table{
+    border: 1px;
+}
+.abstract th {
+    color:#D5DDE5;;
+    background:#1b1e24;
+    border-bottom:4px solid #9ea7af;
+    border-right: 1px solid #343a45;
+    font-size:20px;
+    font-weight: 100;
+    padding:10px;
+    text-align: center;
+    text-shadow: 0 1px 1px rgba(0, 0, 0, 0.1);
+    vertical-align: middle;
+}
+.abstract tr {
+    border-top: 1px solid #C1C3D1;
+    border-bottom-: 10px solid #C1C3D1;
+    color:#666B85;
+    font-size:16px;
+    /*font-weight:normal;*/
+    /*text-shadow: 0 1px 1px rgba(256, 256, 256, 0.1);*/
+}
+.abstract td {
+
+    padding:5px;
+    text-align: center;
+    vertical-align:middle;
+    font-weight:300;
+    font-size:18px;
+    text-shadow: -1px -1px 1px rgba(0, 0, 0, 0.1);
+    border-left: 1px solid #C1C3D1;
+    border-right: 1px solid #C1C3D1;
+    border-bottom: 1px solid #C1C3D1;
+}
