@@ -15,7 +15,10 @@ Intel I5 Core Processor
 RStudio <br>
 R (v4.0+) <br>
 
+<h2>Install packages</h2>
+- dplyr<br>
+- DataExplorer
+<h2>Usage</h2>
 
-<br/>
 
 <b>[Click here](https://mohanameher.github.io/High-value-customers-identification-for-an-Ecommerce-Company/preview.html)</b> to view the preview of the implementation.
