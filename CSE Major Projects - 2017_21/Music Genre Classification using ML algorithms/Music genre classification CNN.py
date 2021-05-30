@@ -103,7 +103,6 @@ sgd = SGD(lr=learning_rate, momentum=momentum, decay=decay_rate)
 model.compile(optimizer="sgd", loss="categorical_crossentropy", metrics=['accuracy'])
 
 
-
 model.fit_generator(
         training_set,
         steps_per_epoch=10,
