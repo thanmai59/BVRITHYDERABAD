@@ -1,1 +1,3 @@
 
+Kaggle dataset - Air bus Ship detection challenge
+Link: https://www.kaggle.com/c/airbus-ship-detection/data
