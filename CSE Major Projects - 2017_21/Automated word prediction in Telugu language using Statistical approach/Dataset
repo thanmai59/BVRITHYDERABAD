@@ -1,0 +1,7 @@
+https://drive.google.com/file/d/1qNlzsGGN0nX5K-OHU2l-jM0xvQBUx3qC/view?usp=sharing
+
+The Dataset used for the word prediction has been extracted from Telugu wikipedia page a total 5 lakhs wiki documents are taken. 
+The dataset holds a collection of different streams of information like about various poets, about the legenderous history, beautiful poems and much more. 
+From extracted wiki documents data, 5,00,000 clean sentences (which mostly have Telugu words) are taken for model development and testing.  
+The Total Number of words are 3,43,917 and unique words are 1,52,934. The Dataset is split into train and test data for getting accurate results. 
+The Train Data consists of 4,50,000 sentences and the  Test data consists of 50,000 sentences
