@@ -1,0 +1,10 @@
+https://data.mendeley.com/datasets/n6wrv4ry6v/8
+
+
+The dataset for the experiment is downloaded from the Mendeley database Powerline 
+Image Dataset which contains different Infrared-IR and Visible Light-VL images and 
+their labels. It contains a collection of images taken and the images were captured 
+from 21 different regions all over Turkey at different seasonal days. Due to varying 
+background behavior, varying temperatures and weather conditions, and varying 
+lighting conditions, the achieved positive set contains several difficult scenes where 
+low contrast causes close-to invisibility for power lines.
