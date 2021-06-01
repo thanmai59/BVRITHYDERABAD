@@ -1,0 +1,2 @@
+
+The infrared and visible image fusion task is an important problem in image processing field. It attempts to extract salient features from source images then these features are integrated into a single image by appropriate fusion method. For decades, these fusion methods achieve extraordinary fusion performance and are widely used in many applications, like video surveillance and military applications.
