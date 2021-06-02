@@ -1,9 +1,16 @@
 <h1>High value customers identification for an E-commerce company</h1>
+<h4>Demo Video</h4>
+
+[![Demo Video](https://img.youtube.com/vi/4MQFmFx71sE/0.jpg)](https://www.youtube.com/watch?v=4MQFmFx71sE)
 
 
 In this project, we used a public dataset from Kaggle in order to explore the benefits of an unsupervised machine learning technique. The main purpose of this project is to better understand customers’ spending and ordering habits with the following features: Number of products ordered, average return rate and total spending. For this purpose, we utilised differenr clustering algorithms like K-means and Hierarchical clustering.
 
 We aimed at identifying the right number of customer segments, providing the number of customers who are highly valued and identifying the clustering algorithm that gives maximum accuracy. 
+
+
+
+
 
 <h2>Requirements</h2>
 <h3>Hardware</h3>
