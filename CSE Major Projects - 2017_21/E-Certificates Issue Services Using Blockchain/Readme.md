@@ -1,1 +1,1 @@
-E-Certificates-Issue-Services-Using-Blockchain
+E-Certificates Issue Services using Blockchain is a web application that is made for students and faculty of a particular college. The process of giving away and collecting certificates is made easy through a digital platform. This ensures that students need not go to the college to collect their certificates and recommendation letters. Blockchain is used in this application to ensure the safety and tamper-free environment as the certificates are a sensitive matter. 
