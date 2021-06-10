@@ -1,3 +1,3 @@
 # BVRITHYDERABAD
 
-### This repository has lab Programs and Project Works
+## This repository has lab Programs and Project Works of BVRIT HYDERABAD College of Engineering for Women
