@@ -1,0 +1,402 @@
+SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
+SET AUTOCOMMIT = 0;
+START TRANSACTION;
+SET time_zone = "+00:00";
+--
+-- Database: `error_school`
+--
+-- --------------------------------------------------------
+--
+-- Table structure for table `academic_syllabus`
+--
+
+CREATE TABLE `academic_syllabus` (
+  `academic_syllabus_id` int(11) NOT NULL,
+  `academic_syllabus_code` longtext COLLATE utf8_unicode_ci,
+  `title` longtext COLLATE utf8_unicode_ci,
+  `description` longtext COLLATE utf8_unicode_ci,
+  `class_id` int(11) DEFAULT NULL,
+  `uploader_type` longtext COLLATE utf8_unicode_ci,
+  `uploader_id` int(11) DEFAULT NULL,
+  `year` longtext COLLATE utf8_unicode_ci,
+  `timestamp` longtext COLLATE utf8_unicode_ci,
+  `file_name` longtext COLLATE utf8_unicode_ci,
+  `subject_id` int(11) DEFAULT NULL
+) 
+
+----------------------------------------------------------
+
+--
+-- Table structure for table `admin`
+--
+
+CREATE TABLE `admin` (
+  `admin_id` int(11) NOT NULL,
+  `name` longtext COLLATE utf8_unicode_ci,
+  `email` longtext COLLATE utf8_unicode_ci,
+  `password` longtext COLLATE utf8_unicode_ci,
+  `level` longtext COLLATE utf8_unicode_ci,
+  `authentication_key` longtext COLLATE utf8_unicode_ci,
+  `phone` longtext COLLATE utf8_unicode_ci,
+  `address` longtext COLLATE utf8_unicode_ci
+) 
+
+--
+-- Dumping data for table `admin`
+--
+
+INSERT INTO `admin` (`admin_id`, `name`, `email`, `password`, `level`, `authentication_key`, `phone`, `address`) VALUES
+(1, 'admin', 'admin@gmail.com', '7c4a8d09ca3762af61e59520943dc26494f8941b', NULL, NULL, NULL, NULL);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `attendance`
+--
+
+CREATE TABLE `attendance` (
+  `attendance_id` int(11) NOT NULL,
+  `timestamp` longtext COLLATE utf8_unicode_ci,
+  `year` longtext COLLATE utf8_unicode_ci,
+  `class_id` int(11) DEFAULT NULL,
+  `section_id` int(11) DEFAULT NULL,
+  `student_id` int(11) DEFAULT NULL,
+  `class_routine_id` int(11) DEFAULT NULL,
+  `status` int(11) DEFAULT NULL
+)
+
+--
+-- Table structure for table `class`
+--
+
+CREATE TABLE `class` (
+  `class_id` int(11) NOT NULL,
+  `name` varchar(11) COLLATE utf8_unicode_ci DEFAULT '',
+  `name_numeric` varchar(3) COLLATE utf8_unicode_ci DEFAULT '',
+  `teacher_id` int(11) DEFAULT NULL
+) 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `class_routine`
+--
+
+CREATE TABLE `class_routine` (
+  `class_routine_id` int(11) NOT NULL,
+  `class_id` int(11) DEFAULT NULL,
+  `section_id` int(11) DEFAULT NULL,
+  `subject_id` int(11) DEFAULT NULL,
+  `time_start` int(11) DEFAULT NULL,
+  `time_end` int(11) DEFAULT NULL,
+  `time_start_min` int(11) DEFAULT NULL,
+  `time_end_min` int(11) DEFAULT NULL,
+  `day` longtext COLLATE utf8_unicode_ci,
+  `year` longtext COLLATE utf8_unicode_ci
+) 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `document`
+--
+
+CREATE TABLE `document` (
+  `document_id` int(11) NOT NULL,
+  `title` longtext COLLATE utf8_unicode_ci,
+  `description` longtext COLLATE utf8_unicode_ci,
+  `file_name` longtext COLLATE utf8_unicode_ci,
+  `file_type` longtext COLLATE utf8_unicode_ci,
+  `class_id` longtext COLLATE utf8_unicode_ci,
+  `teacher_id` int(11) DEFAULT NULL,
+  `timestamp` longtext COLLATE utf8_unicode_ci,
+  `subject_id` int(11) DEFAULT NULL
+) 
+
+-- --------------------------------------------------------
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `exam`
+--
+
+CREATE TABLE `exam` (
+  `exam_id` int(11) NOT NULL,
+  `name` longtext COLLATE utf8_unicode_ci,
+  `date` longtext COLLATE utf8_unicode_ci,
+  `year` longtext COLLATE utf8_unicode_ci,
+  `comment` longtext COLLATE utf8_unicode_ci
+) 
+
+
+-- --------------------------------------------------------
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `frontend_events`
+--
+
+CREATE TABLE `frontend_events` (
+  `frontend_events_id` int(11) NOT NULL,
+  `title` text,
+  `timestamp` int(11) DEFAULT NULL,
+  `status` int(11) NOT NULL DEFAULT '0'
+) 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `frontend_gallery`
+--
+
+CREATE TABLE `frontend_gallery` (
+  `frontend_gallery_id` int(11) NOT NULL,
+  `title` text,
+  `description` longtext,
+  `date_added` int(11) DEFAULT NULL,
+  `image` text,
+  `show_on_website` int(11) NOT NULL DEFAULT '0'
+) 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `frontend_gallery_image`
+--
+
+CREATE TABLE `frontend_gallery_image` (
+  `frontend_gallery_image_id` int(11) NOT NULL,
+  `frontend_gallery_id` int(11) DEFAULT NULL,
+  `title` text,
+  `image` text
+) 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `frontend_general_settings`
+--
+
+CREATE TABLE `frontend_general_settings` (
+  `frontend_general_settings_id` int(11) NOT NULL,
+  `type` varchar(255) DEFAULT NULL,
+  `description` longtext
+) 
+
+--
+-- Dumping data for table `frontend_general_settings`
+--
+
+INSERT INTO `frontend_general_settings` (`frontend_general_settings_id`, `type`, `description`) VALUES
+(1, 'about_us', ''),
+(2, 'terms_conditions', ''),
+(3, 'privacy_policy', ''),
+(4, 'social_links', '[{\"facebook\":\"http://facebook.com\",\"twitter\":\"http://twitter.com\",\"linkedin\":\"http://linkedin.com\",\"google\":\"http://google.com\",\"youtube\":\"http://youtube.com\",\"instagram\":\"http://instagram.com\"}]'),
+(5, 'school_title', ''),
+(6, 'school_logo', ''),
+(7, 'school_location', '51.7548164,-1.2565555'),
+(8, 'address', ''),
+(9, 'phone', ''),
+(10, 'email', ''),
+(11, 'fax', ''),
+(12, 'header_logo', ''),
+(13, 'footer_logo', ''),
+(14, 'copyright_text', ''),
+(15, 'about_us_image', 'about_us.png'),
+(16, 'slider_images', '[{\"title\":\"We rock the big stage\",\"description\":\"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected \",\"image\":\"1.jpg\"},{\"title\":\"Making this the first true generator on the Internet\",\"description\":\"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected \",\"image\":\"2.jpg\"},{\"title\":\"There are many variations of passages of Lorem Ipsum\",\"description\":\"There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration in some form, by injected \",\"image\":\"3.jpg\"}]'),
+(17, 'theme', 'ultimate'),
+(18, 'homepage_note_title', ''),
+(19, 'homepage_note_description', ''),
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `frontend_news`
+--
+
+CREATE TABLE `frontend_news` (
+  `frontend_news_id` int(11) NOT NULL,
+  `title` text COLLATE utf8_unicode_ci,
+  `description` longtext COLLATE utf8_unicode_ci,
+  `date_added` int(11) DEFAULT NULL,
+  `image` text COLLATE utf8_unicode_ci
+) 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `grade`
+--
+
+CREATE TABLE `grade` (
+  `grade_id` int(11) NOT NULL,
+  `name` longtext COLLATE utf8_unicode_ci,
+  `grade_point` longtext COLLATE utf8_unicode_ci,
+  `mark_from` int(11) DEFAULT NULL,
+  `mark_upto` int(11) DEFAULT NULL,
+  `comment` longtext COLLATE utf8_unicode_ci
+) 
+
+-- --------------------------------------------------------
+
+
+--
+-- Table structure for table `mark`
+--
+
+CREATE TABLE `mark` (
+  `mark_id` int(11) NOT NULL,
+  `student_id` int(11) DEFAULT NULL,
+  `subject_id` int(11) DEFAULT NULL,
+  `class_id` int(11) DEFAULT NULL,
+  `section_id` int(11) DEFAULT NULL,
+  `exam_id` int(11) DEFAULT NULL,
+  `mark_obtained` int(11) DEFAULT NULL,
+  `mark_total` int(11) DEFAULT NULL,
+  `comment` longtext COLLATE utf8_unicode_ci,
+  `year` longtext COLLATE utf8_unicode_ci
+) 
+
+--
+-- Dumping data for table `mark`
+--
+
+INSERT INTO `mark` (`mark_id`, `student_id`, `subject_id`, `class_id`, `section_id`, `exam_id`, `mark_obtained`, `mark_total`, `comment`, `year`) VALUES
+(1, 1, 1, 1, 1, 1, NULL, NULL, NULL, '2020-2021'),
+(2, 2, 1, 1, 1, 1, NULL, NULL, NULL, '2020-2021');
+
+-- --------------------------------------------------------
+
+
+--
+-- Table structure for table `noticeboard`
+--
+
+CREATE TABLE `noticeboard` (
+  `notice_id` int(11) NOT NULL,
+  `notice_title` longtext COLLATE utf8_unicode_ci,
+  `notice` longtext COLLATE utf8_unicode_ci,
+  `create_timestamp` longtext COLLATE utf8_unicode_ci,
+  `status` int(11) DEFAULT '1',
+  `show_on_website` int(11) DEFAULT '0',
+  `image` text COLLATE utf8_unicode_ci
+) 
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `section`
+--
+
+CREATE TABLE `section` (
+  `section_id` int(11) NOT NULL,
+  `name` longtext COLLATE utf8_unicode_ci,
+  `nick_name` longtext COLLATE utf8_unicode_ci,
+  `class_id` int(11) DEFAULT NULL,
+  `teacher_id` int(11) DEFAULT NULL
+) 
+
+--
+-- Dumping data for table `section`
+--
+
+INSERT INTO `section` (`section_id`, `name`, `nick_name`, `class_id`, `teacher_id`) VALUES
+(1, 'A', NULL, 1, 1);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `settings`
+--
+
+CREATE TABLE `settings` (
+  `settings_id` int(11) NOT NULL,
+  `type` longtext,
+  `description` longtext
+) 
+
+--
+-- Dumping data for table `settings`
+--
+
+INSERT INTO `settings` (`settings_id`, `type`, `description`) VALUES
+(1, 'system_name', 'School Management'),
+(2, 'system_title', 'joy of learning'),
+(3, 'address', 'Address'),
+(4, 'phone', '9876543210'),
+(5, 'system_email', 'admin@gmail.com'),
+(6, 'running_year', '2020-2021'),
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `student`
+--
+
+CREATE TABLE `student` (
+  `student_id` int(11) NOT NULL,
+  `student_code` longtext COLLATE utf8_unicode_ci,
+  `name` longtext COLLATE utf8_unicode_ci,
+  `birthday` longtext COLLATE utf8_unicode_ci,
+  `sex` longtext COLLATE utf8_unicode_ci,
+  `religion` longtext COLLATE utf8_unicode_ci,
+  `blood_group` longtext COLLATE utf8_unicode_ci,
+  `address` longtext COLLATE utf8_unicode_ci,
+  `phone` longtext COLLATE utf8_unicode_ci,
+  `email` longtext COLLATE utf8_unicode_ci,
+  `password` longtext COLLATE utf8_unicode_ci,
+  `parent_id` int(11) DEFAULT NULL,
+  `dormitory_id` int(11) DEFAULT NULL,
+  `transport_id` int(11) DEFAULT NULL,
+  `dormitory_room_number` longtext COLLATE utf8_unicode_ci,
+  `authentication_key` longtext COLLATE utf8_unicode_ci
+) 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `subject`
+--
+
+CREATE TABLE `subject` (
+  `subject_id` int(11) NOT NULL,
+  `name` longtext COLLATE utf8_unicode_ci,
+  `class_id` int(11) DEFAULT NULL,
+  `teacher_id` int(11) DEFAULT NULL,
+  `year` longtext COLLATE utf8_unicode_ci
+) 
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table `teacher`
+--
+
+CREATE TABLE `teacher` (
+  `teacher_id` int(11) NOT NULL,
+  `name` longtext COLLATE utf8_unicode_ci,
+  `birthday` longtext COLLATE utf8_unicode_ci,
+  `sex` longtext COLLATE utf8_unicode_ci,
+  `religion` longtext COLLATE utf8_unicode_ci,
+  `blood_group` longtext COLLATE utf8_unicode_ci,
+  `address` longtext COLLATE utf8_unicode_ci,
+  `phone` longtext COLLATE utf8_unicode_ci,
+  `email` longtext COLLATE utf8_unicode_ci,
+  `password` longtext COLLATE utf8_unicode_ci,
+  `authentication_key` longtext COLLATE utf8_unicode_ci,
+  `designation` varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  `social_links` text COLLATE utf8_unicode_ci,
+  `about` longtext COLLATE utf8_unicode_ci,
+  `show_on_website` int(11) DEFAULT '0'
+) 
+
+
+-- --------------------------------------------------------
+
+COMMIT;
+

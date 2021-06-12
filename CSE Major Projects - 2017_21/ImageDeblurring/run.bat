@@ -1,2 +1,0 @@
-python CNNDehaze.py
-pause

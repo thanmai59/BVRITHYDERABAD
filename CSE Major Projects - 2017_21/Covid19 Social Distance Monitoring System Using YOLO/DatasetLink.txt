@@ -1,2 +1,0 @@
-https://cocodataset.org/#home
-https://www.kaggle.com/valentynsichkar/yolo-coco-data
