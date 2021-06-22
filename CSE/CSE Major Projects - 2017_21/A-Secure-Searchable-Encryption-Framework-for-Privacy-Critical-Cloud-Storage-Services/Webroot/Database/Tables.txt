@@ -1,0 +1,175 @@
+create database ctrust;
+
+use ctrust;
+
+create table user(
+id int(11) NOT NULL auto_increment,
+
+uname text,
+pwd text,
+dob text,
+email text,
+mobile text,
+location text,
+utype text,
+stype text,
+cname text,
+imagess longblob,
+
+count int(11) default NULL,
+
+sk text,
+PRIMARY KEY  (id)
+);
+
+
+CREATE TABLE admin (
+	username VARCHAR(50),
+	password VARCHAR(50)
+) ;
+
+
+insert into admin values ('admin','admin');
+
+CREATE TABLE cloud (
+	username VARCHAR(50),
+	password VARCHAR(50),
+	cloud VARCHAR(50)
+) ;
+
+
+insert into cloud values ('CS1','CS1','CS1');
+insert into cloud values ('CS2','CS2','CS2');
+insert into cloud values ('CS3','CS3','CS3');
+insert into cloud values ('CS4','CS4','CS4');
+
+CREATE TABLE cost (
+	memory VARCHAR(50),
+	cost VARCHAR(50),
+	cloud VARCHAR(50)
+) ;
+
+
+insert into cost values ('100','1000','CS1');
+insert into cost values ('1000','1500','CS1');
+insert into cost values ('10000','2000','CS1');
+insert into cost values ('100000','2500','CS1');
+insert into cost values ('1000000','3000','CS1');
+
+insert into cost values ('100','500','CS2');
+insert into cost values ('1000','1000','CS2');
+insert into cost values ('10000','1500','CS2');
+insert into cost values ('100000','2000','CS2');
+insert into cost values ('1000000','2500','CS2'); 
+
+insert into cost values ('100','800','CS3');
+insert into cost values ('1000','1200','CS3');
+insert into cost values ('10000','1600','CS3');
+insert into cost values ('100000','2000','CS3');
+insert into cost values ('1000000','2400','CS3');
+
+insert into cost values ('100','700','CS4');
+insert into cost values ('1000','1000','CS4');
+insert into cost values ('10000','1300','CS4');
+insert into cost values ('100000','1600','CS4');
+insert into cost values ('1000000','1800','CS4');
+
+create table cfiles(
+id int(11) NOT NULL auto_increment,
+
+oname text,
+cname text,
+fname text,
+mac text,
+key1 text,
+key2 text,
+pt text,
+ct text,
+dt text,
+PRIMARY KEY  (id));
+
+create table backup(
+id int(11) NOT NULL auto_increment,
+
+oname text,
+cname text,
+fname text,
+mac text,
+key1 text,
+key2 text,
+pt text,
+ct text,
+dt text,
+PRIMARY KEY  (id));
+
+create table vm(
+id int(11) NOT NULL auto_increment,
+
+oname text,
+cname text,
+memory text,
+cost text,
+bw text,
+dt text,
+PRIMARY KEY  (id));
+
+
+
+create table feedback(
+id int(11) NOT NULL auto_increment,
+
+oname text,
+cname text,
+feedback text,
+dt text,
+PRIMARY KEY  (id));
+
+create table feedback1(
+id int(11) NOT NULL auto_increment,
+
+oname text,
+cname text,
+feedback text,
+dt text,
+PRIMARY KEY  (id));
+
+create table Attackers(
+oname text,
+cname text,
+reason text,
+ip text,
+ an text,
+dt text
+);
+
+create table Attackers1(
+oname text,
+cname text,
+feedback text,
+fid int(11),
+ip text,
+ an text,
+dt text
+);
+
+create table Attackers2(
+oname text,
+cname text,
+ct text,
+id int(11),
+ip text,
+ an text,
+dt text
+);
+
+
+create table udownloads(
+oname text,
+cname text,
+fname text,
+sk text,
+ip text,
+an text,
+dt text
+);
+
