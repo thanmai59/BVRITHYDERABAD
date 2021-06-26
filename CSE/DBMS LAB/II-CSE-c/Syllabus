@@ -1,1 +1,49 @@
 
+R18 B.Tech. CSE Syllabus
+JNTU HYDERABAD
+CS407PC: DATABASE MANAGEMENT SYSTEMS LAB
+B.TECH II Year II Sem.
+
+L T P C
+0 0 3 1.5
+
+Co-requisites:
+ Co-requisite of course “Database Management Systems”
+
+Course Objectives:
+ Introduce ER data model, database design and normalization
+ Learn SQL basics for data definition and data manipulation
+
+Course Outcomes:
+ Design database schema for a given application and apply normalization
+ Acquire skills in using SQL commands for data definition and data manipulation.
+ Develop solutions for database applications using procedures, cursors and triggers
+
+List of Experiments:
+1. Concept design with E-R Model
+2. Relational Model
+3. Normalization
+4. Practicing DDL commands
+5. Practicing DML commands
+6. Querying (using ANY, ALL, IN, Exists, NOT EXISTS, UNION, INTERSECT, Constraints etc.)
+7. Queries using Aggregate functions, GROUP BY, HAVING and Creation and dropping of Views.
+8. Triggers (Creation of insert trigger, delete trigger, update trigger)
+9. Procedures
+10. Usage of Cursors
+
+
+TEXT BOOKS:
+1. Database Management Systems, Raghurama Krishnan, Johannes Gehrke, Tata Mc Graw Hill,
+3rd Edition
+2. Database System Concepts, Silberschatz, Korth, McGraw Hill, V edition.
+
+
+REFERENCES BOOKS:
+1. Database Systems design, Implementation, and Management, Peter Rob & Carlos Coronel 7th
+Edition.
+2. Fundamentals of Database Systems, Elmasri Navrate, Pearson Education
+3. Introduction to Database Systems, C.J. Date, Pearson Education
+4. Oracle for Professionals, The X Team, S. Shah and V. Shah, SPD.
+5. Database Systems Using Oracle: A Simplified guide to SQL and PL/SQL, Shah, PHI.
+6. Fundamentals of Database Management Systems, M. L. Gillenson, Wiley Student Edition.
+60
