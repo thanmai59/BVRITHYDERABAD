@@ -1,0 +1,25 @@
+use db;
+select * from sailors;
+insert into sailors values(23,'maseera',4, 43);
+DELIMITER //
+CREATE  PROCEDURE sample1(in pnr numeric(23))
+begin
+select * from sailors;
+end //
+CREATE  PROCEDURE sample2(in pnr numeric(33))
+begin
+select * from sailors;
+end//
+CREATE  PROCEDURE sample3(in pnr numeric(33))
+begin
+select * from sailors where sid = pnr;
+end//
+DELIMITER //
+CREATE  PROCEDURE sample4(out pnr numeric(3))
+begin
+select count(*) into pnr from sailors;
+end//
+DELIMITER ;
+call sample1(33);
+call sample2(33);
+call sample3(33);
