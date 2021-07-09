@@ -1,0 +1,22 @@
+# find all sailors with rating above 7.
+select * from sailors where RATING>7;
+# Find the names of sailors who have reserved Red boat?
+SELECT DISTINCT s.sname FROM sailors s, boats b, reserves r WHERE s.sid=r.sid AND b.bid=r.bid AND b.bcolor='red';
+# Find the names of sailors who have reserved a red or a green boat.
+SELECT DISTINCT SNAME FROM SAILORS WHERE SID IN((SELECT SID FROM RESREVES WHERE BID IN(SELECT BID FROM BOATS WHERE BCOLOR='red'))
+UNION
+(SELECT SID FROM RESERVES WHERE BID IN (SELECT BID FROM BOATS WHERE BCOLOR='GREEN')));
+SELECT DISTINCT S.SNAME FROM SAILORS S, RESERVES R, BOATS B WHERE S.SID = R.SID AND R.BID = B.BID AND 
+(B.BCOLOR = 'RED' OR B.BCOLOR = 'GREEN');
+# Find the names of sailor's who have NOT reserved boat number 103.
+SELECT SNAME FROM SAILORS WHERE SID NOT IN (SELECT SID FROM RESERVES WHERE BID=103);
+# Find the NAMES of sailors who have reserved Pink boat?
+SELECT SNAME FROM SAILORS WHERE SID IN (select distinct r.sid from reserves r, boat b where r.bid=b.bid and b.bcolor='pink');
+# Find the names of sailors who are older than the oldest sailor with a rating of 10.
+SELECT S.SNAME FROM SAILORS S WHERE S.AGE > ALL ( SELECT S2.AGE FROM SAILORS S2 WHERE S2.RATING = 10);
+# Find sailors whose rating is better than some sailor called Brutus.
+SELECT * FROM SAILORS WHERE RATING> ANY(SELECT RATING FROM SAILORS WHERE SNAME='Brutus');
+# Find the names of sailors who have reserved a red and a green boat.
+SELECT S1.SNAME FROM Sailors S1, Boats B1, Reserves R1 WHERE S1.sid=R1.sid AND R1.bid=B1.bid AND Bcolor='red' 
+AND 
+S1.sid IN (SELECT S2.sid FROM Sailors S2, Boats B2, Reserves R2 WHERE S2.sid=R2.sid AND R2.bid=B2.bid AND Bcolor='green');
