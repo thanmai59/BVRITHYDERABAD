@@ -1,0 +1,11 @@
+use db;
+create table Product(PID int, Pname varchar(10), cid int, price int);
+insert into Product values(1,"fruits",1,18);
+insert into Product values(2,"milk",1,19);
+insert into Product values(3,"tofu",2,6);
+insert into Product values(4,"bread",7,25);
+insert into Product values(5,"butter",3,30);
+insert into Product values(6,"oil",3,11);
+select *from Product;
+create view ProductAboveAveragePrice as select Pname, price from Product where price > (select AVG(price) from product);
+select * from ProductAboveAveragePrice;
