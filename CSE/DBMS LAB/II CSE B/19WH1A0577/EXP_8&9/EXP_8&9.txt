@@ -1,0 +1,10 @@
+# Find the sailors with the highest rating.
+SELECT MAX(RATING), MIN(AGE), AVG(AGE), SUM(AGE) FROM SAILORS;
+# Find the name and age of oldest sailor
+SELECT SNAME,AGE FROM SAILORS WHERE AGE=(SELECT MAX(AGE) FROM SAILORS);
+# Find the age of the youngest sailor for each rating level.
+SELECT RATING, MIN(AGE) FROM SAILORS GROUP BY RATING;
+# Find the age of the youngest sailor who is eligible to vote (i.e, is at least 18 years old) for each rating level with at least two such sailors.
+SELECT RATING, MIN(AGE) FROM SAILORS WHERE AGE>=18 GROUP BY RATING HAVING COUNT(SID)>1;
+# Find all sailors name according to names
+SELECT SNAME FROM SAILORS ORDER BY SNAME;
