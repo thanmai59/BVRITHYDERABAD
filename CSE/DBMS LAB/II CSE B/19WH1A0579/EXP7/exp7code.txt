@@ -1,0 +1,34 @@
+CREATE TABLE Sailors(sid int, sname varchar(30), rating int, age int);
+CREATE TABLE Boats(bid int, bname varchar(30), color varchar(30));
+CREATE TABLE Reserves(sid int, bid int, date date);
+INSERT INTO Sailors(sid, sname, rating, age) VALUES (1,"Ravi", 5, 19);
+INSERT INTO Sailors(sid, sname, rating, age) VALUES (2,"Rahul", 4, 24);
+INSERT INTO Sailors(sid, sname, rating, age) VALUES (3,"Raj", 5, 24);
+INSERT INTO Sailors(sid, sname, rating, age) VALUES (4,"Ram", 3, 20);
+INSERT INTO Boats(bid, bname, color) VALUES (20,"rose","red");
+INSERT INTO Boats(bid, bname, color) VALUES (21,"lily","white");
+INSERT INTO Boats(bid, bname, color) VALUES (22,"Daffodile","yellow");
+INSERT INTO Boats(bid, bname, color) VALUES (23,"roja","red");
+SELECT * FROM Sailors;
+SELECT * FROM Boats;
+INSERT INTO Reserves(sid, bid, date) VALUES (1,20,"9999-12-31");
+DELETE  FROM Reserves WHERE date = "9999-12-31";
+SELECT * FROM Reserves;
+INSERT INTO Reserves(sid, bid, date) VALUES (1,20,"2021-01-01");
+INSERT INTO Reserves(sid, bid, date) VALUES (2,21,"2021-01-01");
+INSERT INTO Reserves(sid, bid, date) VALUES (3,22,"2021-01-02");
+SELECT sname FROM Sailors
+WHERE sid = ANY(SELECT sid FROM Reserves WHERE date = "2021-01-01");
+SELECT * FROM Sailors;
+SELECT * FROM Boats;
+SELECT * FROM Reserves;
+SELECT all sid FROM Sailors ;
+SELECT sname FROM Sailors
+WHERE sid = ALL(SELECT sid FROM Reserves WHERE date = "2021-01-01");
+SELECT ALL sid FROM Sailors WHERE TRUE;
+SELECT * FROM Sailors WHERE sid IN (SELECT sid FROM Reserves);
+SELECT * FROM Sailors WHERE sid IN (1,2);
+SELECT * FROM Sailors WHERE sid IN (SELECT sid FROM Reserves WHERE date = "2021-01-01");
+SELECT sname FROM Sailors WHERE EXISTS (SELECT sid  FROM Reserves WHERE Sailors.sid = Reserves.sid AND bid = 20);
+SELECT sname FROM Sailors UNION SELECT sid FROM Reserves;
+SELECT sname FROM Sailors UNION ALL SELECT date FROM Reserves;
