@@ -1,0 +1,32 @@
+show full tables;
+select * from sailors;
+select * from boats;
+select * from reserves;
+create table student1(RollNo numeric primary key,SName varchar(20),DOB date not null,branch varchar(20));
+select * from student1; 
+insert into student1 values(577,"akshitha",'2001-12-14',"cse");
+insert into student1 values(589,"maseera",'2001-06-22',"cse");
+insert into student1 values(588,"sreeja",'2001-06-14',"cse");
+insert into student1 values(590,"lahari",'2001-09-25',"cse");
+insert into student1 values(592,"ayesha",'2001-09-14',"cse");
+insert into student1 values(581,"srinidhi",'2001-12-25',"cse");
+insert into student1 values(563,"akshita",'2001-06-14',"cse");
+alter table student1 drop column branch; /* column deletion */
+alter table student1 add(grade varchar(20));
+update student1 set grade = 'A' where RollNo = 577; /* updating in existing column*/
+update student1 set grade = 'B' where RollNo = 588;
+update student1 set grade = 'C' where RollNo = 589;
+update student1 set grade = 'A' where RollNo = 590;
+update student1 set grade = 'A' where RollNo = 592;
+update student1 set grade = 'B' where RollNo = 581;
+update student1 set grade = 'C' where RollNo = 563;
+alter table student1 add(GP numeric);  /*Adding the column*/
+update student1 set GP = 92 where RollNo = 577;
+update student1 set GP = 85 where RollNo = 588;
+update student1 set GP = 78 where RollNo = 589;
+update student1 set GP = 95 where RollNo = 590;
+update student1 set GP = 90 where RollNo = 592;
+update student1 set GP = 86 where RollNo = 581;
+update student1 set GP = 77 where RollNo = 563;
+delete from student1 where RollNo = 563; /* ROW DELETION*/
+
