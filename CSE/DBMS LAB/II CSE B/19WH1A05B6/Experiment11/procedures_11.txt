@@ -1,0 +1,34 @@
+use db;
+show tables;
+select * from product;
+insert into product values(7,"veggies",6,15);
+insert into product values(8,"flour",4,40);
+insert into product values(9,"meat",3,13);
+insert into product values(10,"spices",4,12);
+select * from product;
+
+DELIMITER //
+create procedure sam(in pnr numeric(33))
+begin
+select * from product;
+end//
+DELIMITER //
+create procedure sam1(in pnr numeric(33)) 
+begin 
+select * from product;
+end //
+DELIMITER //
+create procedure sam3(in pnr numeric(30))
+begin
+select * from product where price = pnr;
+end //
+DELIMITER //
+create procedure sam4(out pnr numeric(3))
+begin
+select count(*) into pnr from product;
+end //
+
+Call sam(33);
+Call sam3(33);
+Call sam4(@a);
+Select @a;
