@@ -1,0 +1,13 @@
+THIS FILE CONTAINS ALL THE PROGRAMS OF DBMS LAB JNTUH (R18)
+EXPERIMENTS :-
+1.   Entities and their attributes.
+2.   Concept design with E-R Model
+3.   Relational Model
+4&5. Practicing DDL commands 
+6.   Practicing DML commands
+7.   Querying (using ANY, ALL, IN, Exists, NOT EXISTS, UNION, INTERSECT, Constraints etc.)
+8.   Queries using Aggregate functions, GROUP BY, HAVING 
+9.   Creation and dropping of Views.
+10.  Triggers (Creation of insert trigger, delete trigger, update trigger) 
+11.  Procedures
+12.  Usage of Cursors
