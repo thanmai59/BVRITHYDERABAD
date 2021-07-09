@@ -1,0 +1,17 @@
+use sys;
+create table login(username varchar(10) primary key, password varchar(10));
+insert into login values("username", "password");
+select * from login;
+
+delimiter //
+CREATE PROCEDURE test()
+BEGIN
+DECLARE i TEXT;
+DECLARE n TEXT;
+DECLARE curs1 CURSOR FOR SELECT username,password FROM login;
+OPEN curs1;
+FETCH curs1 INTO i,n;
+SELECT i,n;
+CLOSE curs1;
+END//
+call test()//
