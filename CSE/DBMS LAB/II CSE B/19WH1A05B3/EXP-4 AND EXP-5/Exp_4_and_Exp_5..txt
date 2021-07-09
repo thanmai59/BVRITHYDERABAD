@@ -1,0 +1,18 @@
+create table sailors(SID numeric(3), SNAME varchar(30), RATING numeric(2), AGE numeric(4, 2), check(RATING >= 1 and RATING <= 10));
+ALTER TABLE SAILORS ADD CONSTRAINT PK_SAILORS PRIMARY KEY(SID);
+desc sailors;
+
+create table boats(BID numeric(3), BNAME varchar(20), BCOLOR varchar(20));
+ALTER TABLE BOATS ADD CONSTRAINT PK_BOATS PRIMARY KEY(BID);
+desc boats;
+
+create table reserves(SID numeric(3), BID numeric(3), RDAY DATE);
+ALTER TABLE RESERVES ADD CONSTRAINT PK_RESERVES PRIMARY KEY(SID, BID, RDAY);
+ALTER TABLE RESERVES ADD CONSTRAINT FK_RESERVES FOREIGN KEY(SID) REFERENCES SAILORS(SID);
+ALTER TABLE RESERVES ADD CONSTRAINT FK_RESERVES1 FOREIGN KEY(BID) REFERENCES BOATS(BID);
+desc reserves;
+
+show tables;
+select * from sailors;
+select * from boats;
+select * from reserves;
