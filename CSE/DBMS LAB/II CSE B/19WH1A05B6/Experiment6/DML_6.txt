@@ -1,0 +1,32 @@
+use employee;
+CREATE TABLE employees(emp_id numeric(10) primary key, DOB date,f_name varchar(20),
+						 l_name varchar(20),
+						date_of_join date,salary numeric,gender varchar(10),age varchar(10));
+desc employees;
+insert into employees values(102,'2001-10-10','akshitha','bichala','2019-04-10',60000,'Female',19),
+(115,'1999-03-15','abhilash','bichala','2018-02-01',75000,'Male',21),
+(105,'1999-07-05','abhishek','bichala','2017-02-01',65000,'Male',22);
+SELECT * FROM employees;
+alter table employees add phoneno numeric;
+update employees set phoneno = 9396485273 where emp_id=102;
+update employees set phoneno = 9397519905 where emp_id=105;
+update employees set phoneno = 8639001586 where emp_id=115;
+
+alter table employees drop age;
+SELECT * FROM employees;
+
+SELECT distinct gender from employees;
+SELECT phoneno from employees where emp_id=115;
+
+SELECT count(distinct gender) from employees;
+SELECT *FROM employees where salary>60000 ;
+
+
+
+
+UPDATE employees set f_name='venkat' where emp_id = 105;
+SELECT * FROM employees;
+insert into employees values(100,'2000-01-10','sona','bichala','2019-04-10',55000,'Female',20);
+SELECT * FROM employees;
+delete from employees where emp_id = 100;
+SELECT * FROM employees;
