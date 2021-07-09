@@ -1,0 +1,13 @@
+CREATE schema employee;
+use employee;
+CREATE TABLE employees(emp_id numeric(10) primary key, DOB date,f_name varchar(20),
+						 l_name varchar(20),
+						date_of_join date,salary numeric,gender varchar(10),age varchar(10));
+desc employees;
+alter table employees add email varchar(20);
+alter table employees add address varchar(50);
+desc employees;
+truncate employees;
+desc employees;
+drop table employees;
+desc employees;
