@@ -1,0 +1,64 @@
+create table login(id numeric(3) primary key, username varchar(50) not null, passwd varchar(50) not null);
+insert into login values(101, 'srinidhi', 'berries');
+insert into login values(102, 'lahari', 'cherries');
+insert into login values(103, 'sreeja', 'flurry');
+insert into login values(104, 'kevin', 'ball');
+
+DELIMITER //
+create procedure test2()
+BEGIN
+	DECLARE i varchar(50);
+	declare n varchar(50);
+    declare curs2 cursor for select username, passwd from login;
+	open curs2;
+    hai: loop
+		fetch curs2 into i,n;
+		if i='sreeja' then 
+			leave hai;
+		else
+			select i,n;
+		end if;
+    end loop hai;
+	close curs2;
+end//
+DELIMITER ;
+
+call test2();
+
+DROP PROCEDURE TEST;
+
+DELIMITER //
+CREATE PROCEDURE createUserIdList (
+	INOUT userIdList varchar(4000)
+)
+BEGIN
+	DECLARE finished INTEGER DEFAULT 0;
+	DECLARE userId varchar(100) DEFAULT "";
+
+	-- declare cursor for employee email
+	DEClARE curId 
+		CURSOR FOR 
+			SELECT username FROM login;
+
+	-- declare NOT FOUND handler
+	DECLARE CONTINUE HANDLER 
+        FOR NOT FOUND SET finished = 1;
+
+	OPEN curId;
+
+	getUserId: LOOP
+		FETCH curId INTO userID;
+		IF finished = 1 THEN 
+			LEAVE getUserId;
+		END IF;
+		-- build email list
+		SET userIdList = CONCAT(userId,";",userIdList);
+	END LOOP getUserId;
+	CLOSE curId;
+
+END//
+DELIMITER ;
+
+SET @userIdList = ""; 
+CALL createUserIdList(@userIdList); 
+SELECT @userIdList;
