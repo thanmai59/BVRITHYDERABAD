@@ -1,0 +1,25 @@
+show databases;
+use db;
+show tables;
+create table testdata(name varchar(20) primary key, sub varchar(10),marks int);
+desc testdata;
+insert into testdata(name,sub, marks) values("akshitha", "Maths",24);
+insert into testdata(name, sub,marks) values("soumya","Science",25);
+insert into testdata(name,sub, marks) values("thulasi","English",23);
+select * from testdata;
+
+create table test_audit(name varchar(20),sub varchar(10), marks int);
+desc test_audit;
+
+create trigger t
+before insert on testdata
+for each row
+insert into test_audit set name = new.name, sub = new.sub, marks = new.marks + 10;
+insert into testdata values ("sahithi", "Arts",12);
+
+show triggers;
+select * from testdata;
+update testdata set name = "siri" where name = "sahithi";
+
+select * from test_audit;
+show triggers;
