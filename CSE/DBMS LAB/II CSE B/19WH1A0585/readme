@@ -1,1 +1,11 @@
 
+Exp 1: Analyze the problem and come with the entities in it. Identify what Data has to be persisted in the databases.(E-R Model)
+Exp 2: Relate the entities and apply cardinalities for relationship.(Conceptual design with E-R model)
+Exp 3: Represent all entities and relationships in a tabular fashion.(Relational Model)
+Exp 4 and 5:Applying constraints on Road Way Travels Tables. Practice DDL commands. Create all tables. 
+Exp 6: Applying DML commands on Road Way Travels Tables. 
+Exp 7: Practice Queries using ANY, ALL, IN, EXISTS, UNION, INTERSECT. 
+Exp 8and 9: Practice Queries using Aggregate functions, Group By, Having Clause and OrderClause
+Exp 10: Writing triggers
+Exp 11: Creation and execution of procedures
+Exp 12: Implement cursors.
