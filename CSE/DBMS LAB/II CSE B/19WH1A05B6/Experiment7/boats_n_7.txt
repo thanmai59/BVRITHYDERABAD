@@ -1,0 +1,63 @@
+create database sailor;
+use sailor;
+CREATE TABLE SAILORS(
+SID int PRIMARY KEY, 
+SNAME varchar(30), 
+RATING int,
+AGE int, 
+CHECK ( RATING >=1 AND RATING <=10)) ;
+CREATE TABLE BOATS( BID int PRIMARY KEY, 
+BNAME varchar(20),
+BCOLOR varchar(20));
+CREATE TABLE RESERVES (
+SID int, 
+BID int,
+day DATE,
+PRIMARY KEY(SID,BID,day), 
+FOREIGN KEY(SID) REFERENCES SAILORS(SID),
+FOREIGN KEY(BID) REFERENCES BOATS(BID));
+INSERT INTO SAILORS VALUES(1,'VIJAY', 9, 40);
+INSERT INTO SAILORS VALUES(2,'RAJESH', 10, 25);
+INSERT INTO SAILORS VALUES(3,'MOHAN', 8, 23);
+INSERT INTO SAILORS VALUES(4,'KUMAR', 7, 28);
+INSERT INTO SAILORS VALUES(5,'SAGAR', 9, 21);
+INSERT INTO SAILORS VALUES(6,'MAHESH', 9, 36);
+select * from sailors;
+INSERT INTO BOATS VALUES(1,'GANGA', 'RED');
+INSERT INTO BOATS VALUES(2,'JAMUNA', 'GREEN');
+INSERT INTO BOATS VALUES(3,'KAVERI', 'PINK');
+INSERT INTO BOATS VALUES(4,'GODAVARI', 'RED');
+INSERT INTO BOATS VALUES(5,'KRISHNA', 'BLUE' );
+select * from boats;
+INSERT INTO RESERVES VALUES(1,1,'2018-01-23');
+INSERT INTO RESERVES VALUES(1,2, '2018-01-26');
+INSERT INTO RESERVES VALUES(2,1,'2018-01-27');
+INSERT INTO RESERVES VALUES(3,2,'2018-01-27');
+INSERT INTO RESERVES VALUES(3,3, '2018-01-28');
+select * from reserves;
+desc sailors;
+SELECT S.SID, S.SNAME, S.RATING, S.AGE FROM
+SAILORS AS S WHERE S.RATING > 8; 
+desc boats;
+#Any 
+select * from boats;
+select BCOLOR from boats 
+where  BID = ANY (select BID from reserves where day='2018-01-27');
+
+SELECT * FROM SAILORS 
+WHERE RATING> ANY(SELECT RATING FROM SAILORS WHERE SNAME='Brutus');
+
+#All
+select all BNAME from boats where true;
+
+#Exists
+select BNAME from boats
+where Exists 
+(select RATING from sailors where sailors.SID = boats.BID and RATING >= 8);
+
+#in
+select * from boats 
+where BCOLOR in ('PINK' , 'BLUE');
+
+#union
+select BNAME from boats union select SNAME from sailors;
