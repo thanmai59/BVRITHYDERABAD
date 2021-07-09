@@ -1,7 +1,0 @@
-create table student(ID int, NAME varchar(20),PHONE int,DOB date,sex char(1));
-desc student;
-alter table student add(email varchar(30), age int);
-desc student;
-truncate table student;
-desc student;
-drop table student; 
